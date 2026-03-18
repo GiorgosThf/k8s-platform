@@ -5,6 +5,10 @@ metadata:
   namespace: argocd
 spec:
   ingressClassName: nginx
+  tls:
+    - hosts:
+        - argocd.local
+      secretName: argocd-local-tls
   rules:
     - host: argocd.local
       http:
