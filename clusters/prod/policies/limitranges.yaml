@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: LimitRange
+metadata:
+  name: baseline-limits
+  namespace: jenkins
+spec:
+  limits:
+    - type: Container
+      defaultRequest:
+        cpu: "250m"
+        memory: "512Mi"
+      default:
+        cpu: "1"
+        memory: "2Gi"
+      max:
+        cpu: "4"
+        memory: "8Gi"
