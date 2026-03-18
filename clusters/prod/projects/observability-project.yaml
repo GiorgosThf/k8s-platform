@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: observability
+  namespace: argocd
+spec:
+  description: Observability stack for the prod platform cluster
+  sourceRepos:
+    - 'https://github.com/<your-user-or-org>/platform-gitops.git'
+  destinations:
+    - namespace: monitoring
+      server: https://kubernetes.default.svc
+    - namespace: logging
+      server: https://kubernetes.default.svc
+    - namespace: argocd
+      server: https://kubernetes.default.svc
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
+  namespaceResourceWhitelist:
+    - group: '*'
+      kind: '*'

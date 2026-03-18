@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: prod-root
+  namespace: argocd
+spec:
+  project: infra
+  source:
+    repoURL: https://github.com/GiorgosThf/platform-gitops.git
+    targetRevision: main
+    path: clusters/prod/root-apps
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
