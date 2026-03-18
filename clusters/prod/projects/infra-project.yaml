@@ -6,7 +6,7 @@ metadata:
 spec:
   description: Infrastructure components for the prod platform cluster
   sourceRepos:
-    - 'https://github.com/<your-user-or-org>/platform-gitops.git'
+    - 'https://github.com/GiorgosThf/k8s-platform.git'
   destinations:
     - namespace: argocd
       server: https://kubernetes.default.svc
