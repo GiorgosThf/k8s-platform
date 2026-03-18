@@ -6,8 +6,8 @@ metadata:
 spec:
   project: infra
   source:
-    repoURL: https://github.com/<your-user-or-org>/platform-gitops.git
-    targetRevision: main
+    repoURL: https://github.com/GiorgosThf/k8s-platform.git
+    targetRevision: master
     path: clusters/prod/policies
   destination:
     server: https://kubernetes.default.svc
